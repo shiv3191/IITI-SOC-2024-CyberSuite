@@ -1,4 +1,4 @@
-# CyberSuite IITI SOC 2024
+#IITI SOC 2024
 <h1>Cybersecurity Suite for Enhanced Digital Security</h1>
 <br>
 <h2>This cybersecurity suite comprising the following tools:</h2>
