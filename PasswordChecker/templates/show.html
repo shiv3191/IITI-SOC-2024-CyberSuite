@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>password-strength</title>
+</head>
+<body>
+    {% if prediction==2 %}
+    <div>
+        <h1>
+            very strong password
+        </h1>
+    </div>
+    {% elif prediction==1 %}
+    <div>
+        <h1>
+            moderate password
+        </h1>
+    </div>
+    {% elif prediction==0 %}
+    <div>
+        <h1>
+            Weak password
+        </h1>
+    </div>
+    {% endif %}
+</body>
+</html>
