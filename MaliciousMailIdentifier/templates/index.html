@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Email_Spam Classifier</title>
+</head>
+<style>
+  body {
+   margin: 0;
+   padding: 0;
+}
+  .navbar{
+    top: 0;
+    background-color: #919cee;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+  }
+  .navbar img{
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  .container::before {
+  
+     background: url(../static/spamemail.jpeg) no-repeat center center/cover;
+            content: "";
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.5;
+}
+  
+  .navbar p{
+    font-size: 50px;
+  }
+  
+  .box{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  .box p {
+    font-size: 40px;
+    font: bold;
+}
+  .check{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+  }
+  
+  .form1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+  }
+  .form1 textarea{
+    background-color: aliceblue;
+    border-radius: 5px;
+    border: 2px solid black;
+  
+  }
+  .button1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+.button-29 {
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 20px;
+}
+
+.button-29:focus {
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+.button-29:hover {
+  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-29:active {
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+.about{
+  display: flex;
+  margin-top: 90px;
+  align-items: center;
+  justify-content: center;
+  
+  flex-wrap: wrap;
+}
+.about1{
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: center;
+  
+  flex-wrap: wrap;
+}
+.about p{
+  font-size: 25px;
+}
+.about1 p{
+  font-size: 25px;
+}
+.con{
+  margin-bottom: 60px;
+}
+
+footer{
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>
+
+<body>
+  <div>
+
+  
+  
+      <div class="navbar">
+        <img src="../static/emailspam.jpg" alt="" height="70px">
+        <p>Email-Spam Classifier</p> 
+      </div>
+    
+    <div class="box">
+  
+      
+         <p >
+          Check your Email here !!
+         </p>
+      
+        <div class="container">
+
+          <form action="/" method="POST">
+            <div class="form-floating">
+              <div class="form1">
+                
+                <textarea class="form-control" placeholder="Write your Email ...." id="email" name="email" rows="15" cols="70" required></textarea>
+                
+              </div>
+              <div class="button1">
+      
+                <button class="button-29" role="button">Check</button>
+              </div>
+           
+      
+          </form>
+        </div>
+      
+      
+        </div>
+    </div>
+    <div class="con">
+
+      <div class="about">
+        <img src="../static/mali.jpg" alt="" height="200px">
+        <p>It can detect any type of Email wether the mail is malicious or not.</p>
+      </div>
+      <div class="about1">
+        <img src="../static/alert.jpg" alt="" height="200px">
+        <p>Be aware of Fraudant/Malicious Emails</p>
+      </div>
+    </div>
+    <hr width="100%" size="2">
+    <footer>
+      <h2>Copyright  &copy; 2024 . All Rights Reserved.</h2>
+    </footer>
+  </div>
+
+
+
+</body>
+
+</html>
