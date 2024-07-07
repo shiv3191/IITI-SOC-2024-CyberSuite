@@ -16,6 +16,10 @@ detect phishing attempts, malware, and suspicious links. </p>
 <p>We Build a tool that can capture user keyboard inputs via keys pressed by the user
 and use it to retrieve sensitive data by making a clone of the login page of a
 famous website and then using that to take input of users.</p>
-
+<h4>Steps to run Project</h4>
+<p>
+  1. install pynput,flask cmd <b>pip install pynput flask</b>
+  2. Run project using <b>python app.py</b>
+</p>
 
 
