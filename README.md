@@ -22,4 +22,16 @@ famous website and then using that to take input of users.</p>
 </p>
 <p> 2. Run project using <b>python app.py</b></p>
 
+<h1>Team Members.</h1>
+
+1) Shiv Patel.
+2) Yogesh Patidar.
+3) Vishal.
+4) Roshan Saini.
+
+<h1>Mentors</h1>
+
+1) Siddhesh Waje.
+2) Satvik Desai.
+
 
