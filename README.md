@@ -20,9 +20,9 @@ We Develop a tool that checks the strength of passwords entered by users. The to
 We Build a tool that can capture user keyboard inputs via keys pressed by the user and use it to retrieve sensitive data by making a clone of the login page of a famous website and then using that to take input of users.
 
 Steps to run Project
-1. pip install pynput flask
-
-2. Run project using python app.py
+1. Create Virtual Environment.
+2. pip install pynput and flask.
+3. Run project by writting "python app.py" on terminal.
 
 <h3>● Team Members.</h3>
 <ul>
