@@ -21,7 +21,7 @@ We Build a tool that can capture user keyboard inputs via keys pressed by the us
 
 Steps to run Project
 1. Create Virtual Environment.
-2. pip install pynput and flask.
+2. Install Packages like pynput and flask.
 3. Run project by writting "python app.py" on terminal.
 
 <h3>● Team Members.</h3>
