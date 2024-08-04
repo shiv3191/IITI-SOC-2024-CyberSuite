@@ -41,7 +41,7 @@ https://github.com/user-attachments/assets/2a442b0d-94da-4604-a6e1-fad6072e65dc
         </ul>
 <h3>● Mentors</h3>
 <ul>
-<li>Siddhesh Waje.</li>
+<li>Siddhesh Waje. (DE-Shaw)</li>
 <li>Satvik Desai.</li>
 </ul>
 
