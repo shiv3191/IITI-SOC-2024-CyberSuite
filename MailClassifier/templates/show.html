@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Email Spam Classifier</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(#08003ab3, #08003ab3), url(https://www.globalsign.com/application/files/8316/6634/3349/Email_security.png);
+
+    }
+
+    .navbar {
+      top: 0;
+
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 20px;
+      box-sizing: border-box;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      background-color: rgb(62, 151, 151);
+    }
+
+    .navbar img {
+      border-radius: 5px;
+      margin-right: 10px;
+      height: 50px;
+    }
+
+    .navbar p {
+      font-size: 30px;
+      margin: 0;
+      color: white;
+      text-shadow: 1px 1px 3px #000000;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    .results {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .message {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      background-color: #f8f8f8;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 45%;
+      text-align: center;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .message img {
+      height: 150px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
+
+    .message p {
+      font-size: 24px;
+      margin: 0;
+    }
+
+    .emoji img {
+      height: 100px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .apple {
+      font-size: 20px;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .button-30 {
+      align-items: center;
+      appearance: none;
+      background-color: rgb(88, 190, 190);
+      border-radius: 4px;
+      border-width: 0;
+      box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+      box-sizing: border-box;
+
+      color: #eeeff2;
+      cursor: pointer;
+      display: inline-flex;
+      font-family: "JetBrains Mono", monospace;
+      height: 48px;
+      justify-content: center;
+      line-height: 1;
+      list-style: none;
+      overflow: hidden;
+      padding: 0 16px;
+      position: relative;
+      text-align: left;
+      text-decoration: none;
+      transition: box-shadow .15s, transform .15s;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      white-space: nowrap;
+      will-change: box-shadow, transform;
+      font-size: 18px;
+      margin-top: 20px;
+    }
+
+    .button-30:focus {
+      box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    }
+
+    .button-30:hover {
+      box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+      transform: translateY(-2px);
+    }
+
+    .button-30:active {
+      box-shadow: #D6D6E7 0 3px 7px inset;
+      transform: translateY(2px);
+    }
+
+    button a {
+      text-decoration: none;
+      color: black;
+    }
+
+    
+    footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: azure;
+    background:2px rgba(0, 0, 0, 0.1);
+  }
+
+    .message:hover {
+      transform: scale(1.05);
+      background-color: #e0e0e0;
+    }
+
+    .visible {
+      display: flex !important;
+    }
+
+    @media (max-width: 768px) {
+      .results {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .message {
+        width: 80%;
+        margin-bottom: 20px;
+      }
+
+      .navbar {
+        height: auto;
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      .navbar img {
+        margin-bottom: 10px;
+      }
+
+      .navbar p {
+        font-size: 24px;
+      }
+
+      .message img {
+        height: 120px;
+      }
+
+      .message p {
+        font-size: 20px;
+      }
+
+      .emoji img {
+        height: 80px;
+      }
+
+      .apple {
+        font-size: 18px;
+      }
+
+      .button-30 {
+        font-size: 16px;
+        height: 40px;
+      }
+      footer h2{
+    font-size: 20px;
+  }
+    }
+
+    @media (max-width: 480px) {
+      .navbar {
+        height: auto;
+        padding: 10px;
+      }
+
+      .navbar p {
+        font-size: 20px;
+      }
+
+      .message img {
+        height: 100px;
+      }
+
+      .emoji img {
+        height: 60px;
+      }
+
+      .apple {
+        font-size: 16px;
+      }
+
+      .button-30 {
+        font-size: 14px;
+        height: 36px;
+      }
+      footer h2{
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <img src="../static/emailspam.jpg" alt="Email Spam Classifier Logo">
+    <p>Email-Spam Classifier</p>
+  </div>
+
+  <div class="content">
+    <div class="results">
+      {% if prediction==1 %}
+      <div class="message visible" style="background-color: #e7dbdb;">
+        <img src="../static/spame.jpg" alt="Spam Email">
+        <p>It's a Spam Email. Be Aware.</p>
+        <div class="emoji">
+          <img src="../static/Email_Scam-64.webp" alt="Reaction GIF">
+        </div>
+        <div class="apple">
+          <p>Thanks for using our application.</p>
+        </div>
+        <button class="button-30" role="button"><a href="/">Go Back</a></button>
+      </div>
+      {% elif prediction==0 %}
+      <div class="message visible" style="background-color:#e7dbdb">
+        <img src="../static/notspam.jpg" alt="Not Spam Email">
+        <p>It's not a Spam Email.</p>
+        <div class="emoji">
+          <img src="../static/emo.png" alt="Safe GIF">
+        </div>
+        <div class="apple">
+          <p>Thanks for using our application.</p>
+        </div>
+        <button class="button-30" role="button"><a href="/">Go Back</a></button>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <hr width="100%" size="2">
+  <footer>
+    <h2>Copyright &copy; 2024 . All Rights Reserved.</h2>
+  </footer>
+</body>
+
+</html>

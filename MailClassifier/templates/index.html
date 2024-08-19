@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Email_Spam Classifier</title>
+</head>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    background: url(../static/leaf.avif);
+    position: cover;
+    color: light rgb(25, 23, 23);
+
+  }
+
+  .navbar {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #726d67;
+    background-image: url('../static/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #b2d6f6;
+    border-bottom: 2px solid #333;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    flex-wrap: wrap;
+  }
+
+  .navbar img {
+    border-radius: 5px;
+    margin-right: 20px;
+  }
+
+  
+  
+  body::before {
+
+    background: url(../static/spamemail.jpeg) no-repeat center center/cover;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.5;
+  }
+
+  .navbar p {
+    font-size: 50px;
+    color: #7fb3d3;
+  }
+
+  .box {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 110px;
+
+  }
+
+  .box p {
+    font-size: 40px;
+    color: rgb(248, 240, 240);
+    font: bold;
+    margin-bottom: 30px;
+  }
+
+  .check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+  }
+
+  .form1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+  }
+
+  .form1 textarea {
+    background-color: aliceblue;
+    border-radius: 5px;
+    border: 2px solid black;
+
+  }
+
+  .button1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+
+  }
+
+  .button-29 {
+    align-items: center;
+    appearance: none;
+    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+    border: 0;
+    border-radius: 6px;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono", monospace;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 20px;
+  }
+
+  .button-29:hover {
+    display: block;
+    filter: drop-shadow(0 0 10px #e85b10);
+  }
+
+  .button-29:focus {
+    box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  }
+
+  .button-29:hover {
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+    transform: translateY(-2px);
+  }
+
+  .button-29:active {
+    box-shadow: #3c4fe0 0 3px 7px inset;
+    transform: translateY(2px);
+  }
+
+  .con {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    margin-left: 90px;
+    margin-left: 90px;
+    padding-left: 20px;
+    max-width: 1200px;
+    padding: 30px;
+    border: 2px solid #1b1a1a;
+    border-radius: 15px;
+    background-color: #c1b1b1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 60px;
+  }
+
+  /* Individual Flex Box Styling */
+  .about,
+  .about1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+
+  .about {
+    background-color: #e0f7fa;
+    border: 2px solid #4dd0e1;
+    margin-right: 20px;
+  }
+
+  .about1 {
+    background-color: #e0f7fa;
+    border: 2px solid #0d0c0c;
+  }
+
+  .about:hover,
+  .about1:hover {
+    transform: scale(1.05);
+    background-color: #fafafa;
+  }
+
+  img {
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+
+  
+
+  /* Responsive Styles */
+  
+
+  @media (max-width: 992px) and (min-width: 639px) {
+    .navbar{
+      height: 110px;
+    }
+    .navbar img{
+      height: 50px;
+
+    }
+    .navbar p{
+      font-size: 40px;
+    }
+    .box p {
+      font-size: 30px;
+    }
+
+    .form1 textarea {
+      width: 85%;
+      font-size: 14px;
+    }
+
+    .button-29 {
+      font-size: 16px;
+      height: 40px;
+    }
+
+    .con {
+      width: 75%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .about,
+    .about1 {
+      width: 80%;
+      margin-bottom: 20px;
+    }
+    .about img{
+      height: 130px;
+    }
+    .about1 img{
+      height: 130px;
+    }
+    footer{
+      margin-bottom: 10px;
+    }
+    footer h2{
+      font-size: 20px;
+    }
+  }
+  @media  (max-width: 639px) and (min-width:519px) {
+    .navbar{
+      height: 110px;
+    }
+    .navbar img{
+      height: 40px;
+
+    }
+    .navbar p{
+      font-size: 30px;
+    }
+    .box p {
+      font-size: 25px;
+    }
+
+    .form1 textarea {
+      width: 75%;
+      height: 200px;
+      font-size: 14px;
+    }
+
+    .button-29 {
+      margin-top: 20px;
+      font-size: 16px;
+      height: 40px;
+    }
+
+    .con {
+      width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .about,
+    .about1 {
+      width: 80%;
+      margin-bottom: 20px;
+    }
+    .about img{
+      height: 110px;
+    }
+    .about1 img{
+      height: 110px;
+    }
+    footer{
+      margin-bottom: 10px;
+    }
+    footer h2{
+      font-size: 17px;
+    }
+  }
+  @media (max-width:519px) {
+    .navbar{
+      height: 130px;
+    }
+    .navbar img{
+      height: 40px;
+      margin-bottom: 10px;
+
+    }
+    .navbar p{
+      font-size: 27px;
+    }
+    .box p {
+      font-size: 24px;
+    }
+
+    .form1 textarea {
+      width: 85%;
+      height: 150px;
+      font-size: 14px;
+    }
+
+    .button-29 {
+      margin-top: 20px;
+      font-size: 16px;
+      height: 40px;
+    }
+
+    .con {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      padding-right: 20px;
+    }
+
+    .about,
+    .about1 {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .about img{
+      height: 90px;
+    }
+    .about1 img{
+      height: 90px;
+    }
+    footer{
+      margin-bottom: 10px;
+    }
+    footer h2{
+      font-size: 14px;
+    }
+  }
+  
+
+  footer {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: azure;
+  }
+</style>
+<link rel="stylesheet" href="show1.html">
+
+<body>
+  <div>
+
+
+
+    <div class="navbar">
+      <img src="../static/emailspam.jpg" alt="" height="70px">
+      <p>Email-Spam Classifier</p>
+    </div>
+
+    <div class="box">
+
+
+      <p>
+        Check your Email here !!
+      </p>
+
+      <div class="container">
+
+        <form action="/" method="POST">
+          <div class="form-floating">
+            <div class="form1">
+
+              <textarea class="form-control" placeholder="Write your Email ...." id="email" name="email" rows="15"
+                cols="70" required></textarea>
+
+            </div>
+            <div class="button1">
+
+              <button class="button-29" role="button">Check</button>
+            </div>
+
+
+        </form>
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="con">
+
+    <div class="about">
+      <img src="../static/mali.jpg" alt="" height="150px">
+      <p>It can detect any type of Email wether the mail is malicious or not.</p>
+    </div>
+    <div class="about1">
+      <img src="../static/alert.jpg" alt="" height="150px">
+      <p> Be aware of Fraudant/Malicious Emails</p>
+    </div>
+  </div>
+  <hr width="100%" size="2">
+  <footer>
+    <h2>Copyright &copy; 2024 . All Rights Reserved.</h2>
+  </footer>
+  </div>
+
+
+
+</body>
+
+</html>

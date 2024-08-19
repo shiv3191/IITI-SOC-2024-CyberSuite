@@ -1,0 +1,32 @@
+2024-08-02 22:56:47 - Untitled - Notepad - h
+2024-08-02 22:56:47 - *h - Notepad - e
+2024-08-02 22:56:48 - *he - Notepad - y
+2024-08-02 22:56:49 - *hey - Notepad - [SPACE]
+2024-08-02 22:56:50 - *hey - Notepad - s
+2024-08-02 22:56:51 - *hey s - Notepad - h
+2024-08-02 22:56:51 - *hey sh - Notepad - i
+2024-08-02 22:56:51 - *hey shi - Notepad - v
+2024-08-02 22:56:51 - *hey shiv - Notepad - [SPACE]
+2024-08-02 22:56:51 - *hey shiv - Notepad - l
+2024-08-02 22:56:52 - *hey shiv l - Notepad - e
+2024-08-02 22:56:52 - *hey shiv le - Notepad - t
+2024-08-02 22:56:52 - *hey shiv let - Notepad - s
+2024-08-02 22:56:52 - *hey shiv lets - Notepad - [SPACE]
+2024-08-02 22:56:53 - *hey shiv lets - Notepad - g
+2024-08-02 22:56:53 - *hey shiv lets g - Notepad - o
+2024-08-02 22:56:54 - *hey shiv lets go - Notepad - [SPACE]
+2024-08-02 22:56:54 - *hey shiv lets go - Notepad - t
+2024-08-02 22:56:54 - *hey shiv lets go t - Notepad - o
+2024-08-02 22:56:54 - *hey shiv lets go to - Notepad - [SPACE]
+2024-08-02 22:56:54 - *hey shiv lets go to - Notepad - t
+2024-08-02 22:56:54 - *hey shiv lets go to t - Notepad - h
+2024-08-02 22:56:55 - *hey shiv lets go to th - Notepad - e
+2024-08-02 22:56:55 - *hey shiv lets go to the - Notepad - [SPACE]
+2024-08-02 22:56:55 - *hey shiv lets go to the - Notepad - p
+2024-08-02 22:56:55 - *hey shiv lets go to the p - Notepad - a
+2024-08-02 22:56:56 - *hey shiv lets go to the pa - Notepad - r
+2024-08-02 22:56:56 - *hey shiv lets go to the par - Notepad - t
+2024-08-02 22:56:56 - *hey shiv lets go to the part - Notepad - y
+2024-08-02 22:57:10 - key_log.txt - Keylogger_advanced - Visual Studio Code - [CTRL]
+2024-08-02 22:57:11 - key_log.txt - Keylogger_advanced - Visual Studio Code - 
+2024-08-02 22:57:11 - key_log.txt - Keylogger_advanced - Visual Studio Code - [BACKSPACE]
