@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password-strength-checker</title>
+</head>
+<style>
+
+    body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #212121;
+        }
+         .container a{
+            font-size: 30px;
+        }
+        .container h3{
+           color: #03f40f;
+        }
+
+        
+
+        @media only screen and (max-width: 600px) {
+        .pratik img{
+            height: 250px;
+            width: 270px;
+            position: relative;
+        }
+        .pratik{
+            position: relative;
+            top: 0px;
+            width: 100%;
+            display: flex;
+            left:15px;
+            flex-direction: column;
+            position: relative;
+            padding-top: 60px;
+            padding: 20px;
+            box-sizing: border-box;
+            align-items: center;
+            background-color: transparent;
+            color: #fff;
+        }
+        .pratik h1{
+            font-size: 40px;
+            text-align: center;
+        }
+        .pratik h3{
+            font-size: 20px;
+            text-align: center;
+        }
+    
+        
+        .container{
+            position: relative;
+            margin-top: 40px;
+            scroll-behavior: smooth;
+            background-size:cover ;
+           opacity: 1;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            text-align: center;
+            width: 300px;
+            padding: 10px;
+            background: rgba(24, 20, 20, 0.987);
+            color: #fff;
+        }
+       
+
+        .cont{
+            display: flex;
+          flex-direction: column;
+          width: 300px;
+        }
+        .cont1{
+            margin-top: 10px;
+            padding: 12px;
+            background: rgba(24, 20, 20, 0.987);
+            border-radius: 20px;
+            color: #fff;
+        }
+         .cont1 h2{
+            text-decoration:underline;
+         }
+         .cont1 p{
+            margin-top: 10px;
+         }
+         .mistake{
+            display: flex;
+             flex-direction: column;
+             align-items: center;
+             width: 300px;
+             background: rgba(24, 20, 20, 0.987);
+             border-radius: 20px;
+             margin-top: 20px;
+             padding: 10px;
+             color: #fff;
+         }
+         .mistake img{
+            width:300px;
+         }
+         .container1{
+            align-items: center;
+            width: 300px;
+         }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1000px){
+    .pratik img{
+            display: flex;
+            height: 300px;
+            width: 450px;
+        }
+        .pratik{
+            position: relative;
+            top: 0px;
+            width: 100%;
+            display: flex;
+            left:15px;
+            flex-direction: column;
+            position: relative;
+            padding-top: 30px;
+            padding: 20px;
+            box-sizing: border-box;
+            align-items: center;
+            background-color: transparent;
+            color: #fff;
+        }
+        .pratik h1{
+            font-size:45px;
+            text-align: center;
+        }
+        .pratik h3{
+            font-size: 25px;
+            text-align: center;
+        }
+    
+        
+        .container{
+            position: relative;
+            background: rgba(24, 20, 20, 0.987);
+            margin-top: 40px;
+            scroll-behavior: smooth;
+            background-size:cover ;
+           opacity: 1;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            text-align: center;
+            width: 500px;
+            color: #fff;
+            padding: 10px;
+        }
+        
+        .cont{
+            display: flex;
+          flex-direction: column;
+          width: 500px;
+        }
+        .cont1{
+            margin-top: 10px;
+            padding: 16px;
+            background: rgba(24, 20, 20, 0.987);
+            border-radius: 20px;
+            color: #fff;
+        }
+         .cont1 h2{
+            text-decoration:underline;
+         }
+         .cont1 p{
+            margin-top: 10px;
+         }
+
+         .mistake{
+            display: flex;
+             flex-direction: column;
+             align-items: center;
+             width: 500px;
+             background: rgba(24, 20, 20, 0.987);
+             border-radius: 20px;
+             margin-top: 20px;
+             padding: 10px;
+             color: #fff;
+         }
+         .mistake img{
+            width:500px;
+         }
+         .container1{
+            align-items: center;
+            width: 500px;
+         }
+}
+
+.strength {
+            font-weight: bold;
+        }
+        .weak {
+            color: red;
+        }
+        .strong {
+            color: green;
+        }
+        .criteria {
+            list-style-type: none;
+        }
+        .criteria li {
+            color: red;
+        }
+        .criteria li.valid {
+            color: green;
+        }
+
+
+@media only screen and (min-width: 1000px  ) {
+    .pratik img{
+            display: flex;
+            height: 350px;
+            width: 500px;
+            position: relative;
+        }
+        .roshan{
+            padding-top: 0px;
+        }
+        .pratik{
+            position: relative;
+            top: 0px;
+            width: 100%;
+            display: flex;
+            left:35px;
+            flex-direction:row-reverse;
+            position: relative;
+            padding: 60px;
+            box-sizing: border-box;
+            background-color: transparent;
+            color: #fff;
+            height:600px;
+        }
+        .pratik h1{
+          margin-top: 100px;
+            font-size: 50px;
+            text-align: center;
+        }
+        .pratik h3{
+            font-size: 30px;
+            text-align: center;
+        }
+       
+    
+        .container{
+            position: relative;
+            background: rgba(24, 20, 20, 0.987);
+            margin-top: 40px;
+            scroll-behavior: smooth;
+            background-size:cover ;
+           opacity: 1;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(246, 244, 244, 0.1);
+            margin-bottom: 20px;
+            text-align: center;
+            width: 950px;
+            color: #fff;
+            padding: 10px;
+        }
+        
+
+        .cont{
+            display: flex;
+          flex-direction: column;
+          width: 950px;
+        }
+        .cont1{
+            margin-top: 10px;
+            padding: 16px;
+            background: rgba(24, 20, 20, 0.987);
+            border-radius: 20px;
+            color: #fff;
+        }
+         .cont1 h2{
+            text-decoration:underline;
+         }
+         .cont1 p{
+            margin-top: 10px;
+         }
+         .mistake{
+            display: flex;
+             flex-direction: raw;
+             align-items: center;
+             width: 950px;
+             background: rgba(24, 20, 20, 0.987);
+             border-radius: 20px;
+             margin-top: 20px;
+             padding: 10px;
+             justify-content: space-between;
+             color: #fff;
+         }
+         .mistake img{
+            width:200px;
+         }
+         .container1{
+            align-items: center;
+            width: 950px;
+         }
+}
+
+
+
+        .btnn{
+            text-align: center;
+        }
+
+        .btnn a{
+    width: 70px;
+  padding: 10px 0px;
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px
+        }
+        .btnn a:hover{
+            background: #181414;
+  color: #fff;
+  border-radius: 50px;
+  box-shadow: 0 0 5px #03f40f,
+              0 0 2.5px #03f40f,
+              0 0 5.0px #03f40f,
+              0 0 10.0px #03f40f;
+        }
+
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+
+       
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .inputWrap {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        input[type="password"] {
+            width: 80%;
+  padding: 10px 0;
+  font-size: 26px;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 10px solid #blue;
+  outline: none;
+             background: linear-gradient(45deg,#483D8B,#5F9EA0,#483D8B,#FF7F50,#8B008B,#00FFFF,#483D8B);
+            background-size: 300% 300%;
+            animation: gradientAnimation 10s ease infinite;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+       
+
+        #togglePassword {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .strengthMeter {
+            height: 5px;
+            background: #f00;
+            width: 0;
+            border-radius: 5px;
+            transition: width 0.5s, background 0.5s;
+        }
+
+        .strengthText {
+            margin-top: 10px;
+            color: #f00;
+        }
+
+        .container.weak .strengthMeter {
+            width: 10%;
+            background: #f00;
+        }
+
+        .container.weak .strengthText {
+            color: #f00;
+        }
+
+        .container.moderate .strengthMeter {
+            width: 70%;
+            background: #eeddcd;
+        }
+
+        .container.moderate .strengthText {
+            color: #eeddcd;
+        }
+
+        .container.strong .strengthMeter {
+            width: 100%;
+            background: #0f0;
+        }
+
+        .container.strong .strengthText {
+            color: #0f0;
+        }
+
+        .criteria {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .criteria li {
+            margin-bottom: 5px;
+        }
+
+        .criteria .valid {
+            color: #0f0;
+        }
+
+        .criteria .invalid {
+            color: #f00;
+        }
+
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .footer-container {
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+            padding: 10px;
+        }
+
+        .footer-section h3 {
+            margin-top: 0;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin: 5px 0;
+        }
+
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #7f8c8d;
+            margin-top: 20px;
+            padding-top: 10px;
+        }
+
+
+
+
+
+    
+
+</style>
+<body>
+    <div class="container2" >
+                <div class="pratik">
+                    <img src="https://i.ibb.co/NK05qnC/image-removebg-preview.png">
+           <div class="roshan"> 
+                    <h1>How strong is your password?</h1>
+            <h3 style="margin-top: 5px;">Passwords are like the keys to our hearts; they protect our most precious memories and secrets, ensuring only the trusted can unlock the stories they guard.</h3>
+        </div>
+        </div>
+        <div class="btnn"> <a class="scroll-btn" onclick="scrollToClass('co1')">Click Here to Check <span></span></a></div>
+    </div>
+    
+
+<div class="co1" style="margin-top: 180px;">
+    <div class="container">
+            <a>Check Your Password</a>
+            <h3>Think your password is unbreakable? Put it to the test and see!</h3>
+            <div class="inputWrap">
+              <input type="text" placeholder="Enter Your Password" id="yourPassword"  maxlength="15" style="width:80%; height:35px;" >
+            </div>
+            <div class="strengthMeter"></div>
+            <div class="strengthText">Weak Password </div>
+            <ul id="criteria" class="criteria">
+                <li id="length">At least 8 characters</li>
+                <li id="lowercase">At least one lowercase letter</li>
+                <li id="uppercase">At least one uppercase letter</li>
+                <li id="digit">At least one digit</li>
+                <li id="special">At least one special character (@#$%^&*()-+)</li>
+                <li id="adjacent">No adjacent duplicate characters</li>
+            </ul>
+    </div>
+</div>
+
+    <div style="margin-top: 70px; color: #fff;">Password FAQ</div>
+    <div class="cont">
+    
+        <div class="cont1"><h2 >Is it safe to type my real password here?</h2>
+            <p>Yes. Your password is never transmitted to our servers and is processed locally in your device's web browser.</p></div>
+        <div class="cont1"><h2>What's the best way to manage my passwords?</h2>
+            <p>The safest way to manage your passwords is through a secure password manager, like Password Checker.</p></div>
+    
+</div>
+    
+    <div class="container1" >
+        <h1 style="color: #ffffff;">Common Password Mistakes</h1>
+        
+        <div class="mistake">
+            <div>
+                <h2>Too Short</h2>
+                <p>Using passwords that are too short, like "12345", makes them very easy to guess or crack.</p>
+            </div>
+            <img src="https://i.pinimg.com/736x/72/7a/6f/727a6fbb23a6d49e6a0308660206e3af.jpg" alt="Too Short">
+        </div>
+        
+        <div class="mistake">
+            
+            <div>
+                <h2>Common Words</h2>
+                <p>Using common words and phrases, like "password" or "qwerty", is a bad idea because they are easy to guess.</p>
+            </div>
+            <img src="https://outpost24.com/wp-content/uploads/2023/10/default-admin-passwords.png" alt="Common Words">
+        </div>
+        
+        <div class="mistake">
+            <div>
+                <h2>Personal Information</h2>
+                <p>Including personal information, such as "John1978", makes your passwords easier to guess.</p>
+            </div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPaBwtEPnF4yd1VoO0oW4m8JcoVqYrdAjqcg&s" alt="Personal Information">
+        </div>
+        
+        <div class="mistake">
+            
+            <div>
+                <h2>Predictable Patterns</h2>
+                <p>Using predictable patterns, like "abc123", makes your passwords less secure.</p>
+            </div>
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240222120449/Most-Common-Passwords-List-image-(1).webp" alt="Predictable Patterns">
+        </div>
+        
+        <div class="mistake">
+            <div>
+                <h2>Reusing Passwords</h2>
+                <p>Using the same password across multiple sites means if one is compromised, all are at risk.</p>
+            </div>
+            <img src="https://computerone.com.au/wp-content/uploads/2018/10/C1-Post1.png" alt="Reusing Passwords">
+        </div>
+        
+    
+        
+        <div class="mistake">
+            
+            <div>
+                <h2>Keyboard Patterns</h2>
+                <p>Using patterns that follow the layout of the keyboard, like "qwertyui", are easy to guess.</p>
+            </div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiETyvyf-nHCBzys9zQj7ro8xvkbYONBKW_A&s" alt="Keyboard Patterns">
+        </div>
+        
+        <div class="mistake">
+            <div>
+                <h2>Not Using a Password Manager</h2>
+                <p>Not using a password manager can lead to simpler, less secure passwords because you have to remember them all.</p>
+            </div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgwfesbXyK8v8LwGJOOMr4bJrSlVmBsOLU1Q&s" alt="Not Using a Password Manager">
+        </div>
+
+        <div class="mistake">
+            
+            <div>
+                <h2>  Lack of Complexity</h2>
+                <p>  Passwords that don't mix uppercase letters, lowercase letters, numbers, and special characters are weaker.</p>
+            </div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShswRUYjnUh_AimD3NXAsOQP7ltXhCAEopnQ&s" alt="Lack of Complexity">
+        </div>
+
+        
+<footer style="background-color: #212121; color: white; padding: 20px 0; text-align: center; margin-top:40px">
+    
+    <div style="border-top: 1px solid #7f8c8d; margin-top: 20px; padding-top: 10px;">
+        <p>&copy; 2024 All rights reserved.</p>
+    </div>
+</footer>
+    <script>
+        function scrollToClass(className) {
+            var element = document.querySelector('.' + className);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        let container = document.querySelector('.container');
+        let passwordInput = document.querySelector('#yourPassword');
+        let togglePasswordButton = document.querySelector('#togglePassword');
+        let strengthText = document.querySelector('.strengthText');
+        let criteria = document.querySelectorAll('.criteria li');
+
+        document.addEventListener('input', function () {
+            let password = passwordInput.value;
+            let strength = getStrength(password);
+            updateCriteria(password);
+
+            if (strength < 3) {
+                container.classList.add('weak');
+                container.classList.remove('moderate');
+                container.classList.remove('strong');
+                strengthText.textContent = "Weak Password";
+            } else if (strength < 6) {
+                container.classList.add('moderate');
+                container.classList.remove('weak');
+                container.classList.remove('strong');
+                strengthText.textContent = "Moderate Password";
+            } else {
+                container.classList.add('strong');
+                container.classList.remove('moderate');
+                container.classList.remove('weak');
+                strengthText.textContent = "Strong Password";
+            }
+        });
+
+        togglePasswordButton.addEventListener('click', function () {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            togglePasswordButton.textContent = type === 'password' ? 'SHOW' : 'HIDE';
+        });
+
+        function getStrength(password) {
+            let strength = 0;
+            if (password.length >= 8) strength++;
+            if (/[a-z]/.test(password)) strength++;
+            if (/[A-Z]/.test(password)) strength++;
+            if (/[0-9]/.test(password)) strength++;
+            if (/[@#$%^&*()\-+]/.test(password)) strength++;
+            if (!/(.)\1/.test(password)) strength++;
+            return strength;
+        }
+
+        function updateCriteria(password) {
+            criteria.forEach((criterion) => {
+                let id = criterion.id;
+                let valid = false;
+                switch (id) {
+                    case 'length':
+                        valid = password.length >= 8;
+                        break;
+                    case 'lowercase':
+                        valid = /[a-z]/.test(password);
+                        break;
+                    case 'uppercase':
+                        valid = /[A-Z]/.test(password);
+                        break;
+                    case 'digit':
+                        valid = /[0-9]/.test(password);
+                        break;
+                    case 'special':
+                        valid = /[@#$%^&*()\-+]/.test(password);
+                        break;
+                    case 'adjacent':
+                        valid = !/(.)\1\1/.test(password);
+                        break;
+                }
+                if (valid) {
+                    criterion.classList.add('valid');
+                    criterion.classList.remove('invalid');
+                } else {
+                    criterion.classList.add('invalid');
+                    criterion.classList.remove('valid');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
